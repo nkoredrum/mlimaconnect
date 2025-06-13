@@ -1,6 +1,6 @@
-# Minimal configuration for Mlima Connect static site
+# Mlima Connect Static Site Configuration
 services:
-  - type: static_site
+  - type: web
     name: mlima-connect
     env: static
     buildCommand: ""
