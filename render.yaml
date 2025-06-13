@@ -5,7 +5,6 @@ services:
   - type: web
     name: mlima-connect
     env: static
-    region: oregon  # Options: oregon, ohio, frankfurt, singapore, sydney
     plan: free
     branch: master
     autoDeploy: true
