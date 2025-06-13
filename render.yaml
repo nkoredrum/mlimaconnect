@@ -1,7 +1,6 @@
 # Render Configuration File
 # This file defines the infrastructure for your Mlima Connect static website
 
-# List of services to deploy
 services:
   - type: web
     name: mlima-connect
@@ -10,22 +9,13 @@ services:
     plan: free
     branch: master
     autoDeploy: true
-    
-    # Static site configuration
-    static:
-      publish: .
-      buildCommand: ""
-      
-    # Routes for client-side routing
+    buildCommand: ""
+    staticPublishPath: "."
+    envVars:
+      - key: NODE_VERSION
+        value: 16.14.0
     routes:
       - type: rewrite
         source: "/*"
         destination: "/index.html"
-    
-    # Health check
     healthCheckPath: /index.html
-    
-    # Environment variables
-    envVars:
-      - key: NODE_VERSION
-        value: 16.14.0
