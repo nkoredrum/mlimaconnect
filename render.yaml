@@ -1,0 +1,60 @@
+# Render Configuration File
+# This file defines the infrastructure for your Mlima Connect static website
+
+# List of services to deploy
+services:
+  - type: web
+    # A unique name for your service
+    name: mlima-connect
+    # The root directory of your static site (relative to the root of your repository)
+    root: .
+    # The build command to run (if any)
+    buildCommand: ""  # No build step needed for static HTML
+    # The command to start your service (not needed for static sites)
+    startCommand: ""
+    # Environment variables (if any)
+    envVars:
+      - key: NODE_VERSION
+        value: 16.14.0  # Optional: Only needed if you add JavaScript functionality later
+    # The static site configuration
+    static:
+      # The directory containing your static files (relative to the root of your repository)
+      publish: .
+      # The command to build your static site (if any)
+      buildCommand: ""  # No build step needed for static HTML
+    # Plan settings (free tier)
+    plan: free
+    # Region (choose the one closest to your users)
+    region: oregon  # Options: oregon, ohio, frankfurt, singapore, sydney
+    # Auto-deploy from Git (enabled by default)
+    autoDeploy: true
+    # Branch to deploy from (usually main or master)
+    branch: master
+    # Environment type
+    env: static
+    # Health check path (optional)
+    healthCheckPath: /index.html
+    # Routes (optional)
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+
+# Add any necessary environment variables
+# envVars:
+#   - key: EXAMPLE_VAR
+#     value: example-value
+
+# Add any necessary secrets (for sensitive information)
+# secrets:
+#   - key: EXAMPLE_SECRET
+#     generateValue: true
+
+# Add any custom domains (you can set these up in the Render dashboard after initial deploy)
+# customDomains:
+#   - name: yourdomain.com
+#     domain: yourdomain.com
+#     type: apex
+#   - name: www.yourdomain.com
+#     domain: www.yourdomain.com
+#     type: www
