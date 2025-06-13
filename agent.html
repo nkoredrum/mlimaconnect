@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become an Agent - Mlima Connect</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2E8B57;
+            --accent-color: #FFD700;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .agent-form {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .form-label {
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 30px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #267548;
+            border-color: #267548;
+        }
+        
+        .benefits {
+            background-color: #f0f8f0;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .benefits h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Mlima Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="survey.html">Farmer Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="agent.html">Become an Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ussd.html">USSD Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Become a Mlima Connect Agent</h1>
+            <p class="lead">Join our network and help farmers in your community access markets and financial services</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="agent-form">
+            <h2 class="text-center mb-4">Agent Application Form</h2>
+            <p class="text-center mb-5">Fill out the form below to apply to become a Mlima Connect agent. We'll get back to you within 3 business days.</p>
+            
+            <form action="https://formspree.io/f/your-form-id-here" method="POST" id="agentForm">
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName" class="form-label">First Name *</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName" class="form-label">Last Name *</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number (WhatsApp) *</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <label for="district" class="form-label">District *</label>
+                        <input type="text" class="form-control" id="district" name="district" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="subcounty" class="form-label">Subcounty *</label>
+                        <input type="text" class="form-control" id="subcounty" name="subcounty" required>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Do you have any farming experience? *</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="farmingExperience" id="experienceYes" value="Yes" required>
+                        <label class="form-check-label" for="experienceYes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="farmingExperience" id="experienceNo" value="No">
+                        <label class="form-check-label" for="experienceNo">
+                            No
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="experienceDetails" class="form-label">Please describe your farming or agribusiness experience</label>
+                    <textarea class="form-control" id="experienceDetails" name="experienceDetails" rows="3"></textarea>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="whyAgent" class="form-label">Why do you want to become a Mlima Connect agent? *</label>
+                    <textarea class="form-control" id="whyAgent" name="whyAgent" rows="3" required></textarea>
+                </div>
+                
+                <div class="benefits">
+                    <h4>Benefits of Being an Agent</h4>
+                    <ul>
+                        <li>Earn competitive commissions on transactions</li>
+                        <li>Be a leader in your community</li>
+                        <li>Access to training and support</li>
+                        <li>Flexible working hours</li>
+                        <li>Be part of Uganda's agricultural transformation</li>
+                    </ul>
+                </div>
+                
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                    <label class="form-check-label" for="terms">
+                        I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a> *
+                    </label>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms and Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>1. Agent Responsibilities</h6>
+                    <p>As a Mlima Connect agent, you will be responsible for assisting farmers in your community to access our platform, providing basic support, and facilitating transactions as needed.</p>
+                    
+                    <h6>2. Commissions</h6>
+                    <p>Agents earn a commission on transactions processed through their account. Commission rates vary by service and will be clearly communicated during the onboarding process.</p>
+                    
+                    <h6>3. Code of Conduct</h6>
+                    <p>Agents are expected to maintain the highest standards of professionalism and integrity. Any fraudulent activity will result in immediate termination and potential legal action.</p>
+                    
+                    <h6>4. Training</h6>
+                    <p>All agents must complete the Mlima Connect training program before they can start operating. Additional training may be required for new services.</p>
+                    
+                    <h6>5. Data Privacy</h6>
+                    <p>Agents must respect user privacy and handle all personal information in accordance with our privacy policy and applicable laws.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Mlima Connect</h5>
+                    <p>Empowering Ugandan farmers with access to markets, financial services, and agricultural support.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="survey.html" class="text-white">Farmer Survey</a></li>
+                        <li><a href="agent.html" class="text-white">Become an Agent</a></li>
+                        <li><a href="ussd.html" class="text-white">USSD Demo</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@mlimaconnect.ug</li>
+                        <li>Phone: +256 700 000000</li>
+                        <li>WhatsApp: +256 700 000001</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Mlima Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Form Submission Handler -->
+    <script>
+        document.getElementById('agentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Here you would typically send the form data to your server
+            // For now, we'll just show a success message
+            alert('Thank you for your application! We will review your information and get back to you within 3 business days.');
+            this.reset();
+            
+            // In a real implementation, you would use fetch or XMLHttpRequest to send the data
+            // fetch(this.action, {
+            //     method: 'POST',
+            //     body: formData,
+            //     headers: {
+            //         'Accept': 'application/json'
+            //     }
+            // })
+            // .then(response => {
+            //     if (response.ok) {
+            //         alert('Thank you for your application! We will review your information and get back to you soon.');
+            //         this.reset();
+            //     } else {
+            //         throw new Error('Network response was not ok');
+            //     }
+            // })
+            // .catch(error => {
+            //     console.error('Error:', error);
+            //     alert('There was a problem submitting your application. Please try again later.');
+            // });
+        });
+    </script>
+</body>
+</html>
