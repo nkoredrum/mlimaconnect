@@ -13,7 +13,7 @@ services:
     node:
       version: "20"
     plan: free # Use the free tier for development
-    buildCommand: "npm install"
+    buildCommand: "npm install && npm run db:migrate"
     startCommand: "npm start"
     envVars:
       - key: DATABASE_URL
