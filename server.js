@@ -23,7 +23,16 @@ const PORT = process.env.PORT || 3000;
 app.enable('trust proxy');
 
 // Set security HTTP headers
-app.use(helmet());
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+                "frame-src": ["'self'", 'https://docs.google.com'],
+            },
+        },
+    })
+);
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
