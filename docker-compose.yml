@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mlima-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+    restart: unless-stopped
+    networks:
+      - mlima-network
+    # Uncomment when you set up the database
+    # depends_on:
+    #   - db
+
+  # Database service (PostgreSQL)
+  # db:
+  #   image: postgres:13-alpine
+  #   container_name: mlima-db
+  #   environment:
+  #     - POSTGRES_USER=${DB_USER:-postgres}
+  #     - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
+  #     - POSTGRES_DB=${DB_NAME:-mlima_db}
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - mlima-network
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 5
+
+  # Redis for caching and sessions (optional)
+  # redis:
+  #   image: redis:6-alpine
+  #   container_name: mlima-redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #   networks:
+  #     - mlima-network
+  #   command: redis-server --appendonly yes
+
+  # pgAdmin for database management (optional)
+  # pgadmin:
+  #   container_name: mlima-pgadmin
+  #   image: dpage/pgadmin4:latest
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@example.com
+  #     - PGADMIN_DEFAULT_PASSWORD=admin
+  #   ports:
+  #     - "5050:80"
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - mlima-network
+
+# Volumes for persistent data
+volumes:
+  # postgres_data:
+  # redis_data:
+
+
+# Networks
+networks:
+  mlima-network:
+    driver: bridge

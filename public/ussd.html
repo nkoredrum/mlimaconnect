@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USSD Demo - Mlima Connect</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Mlima Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="survey.html">Farmer Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="agent.html">Become an Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ussd.html">USSD Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">USSD Demo</h1>
+            <p class="lead">Experience our USSD service right from your browser</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="ussd-container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-1 col-md-12">
+                    <div class="mobile-phone-frame">
+                        <div class="mobile-phone-top-bar">
+                            <span class="mobile-phone-speaker"></span>
+                            <span class="mobile-phone-camera"></span>
+                        </div>
+                        <div class="ussd-demo">
+                        <h3 class="text-center mb-4">Mlima Connect USSD Simulator</h3>
+                        
+                        <div class="ussd-screen" id="ussdScreen">
+                            <div class="ussd-message ussd-received">
+                                Welcome to Mlima Connect
+                            </div>
+                            <div class="ussd-message ussd-received">
+                                Dial *123# to access our services
+                            </div>
+                        </div>
+                        
+                        <div class="ussd-input">
+                            <input type="text" id="ussdInput" placeholder="Type your USSD code (e.g., *123#)" value="*123#">
+                            <button id="sendUssd">SEND</button>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <button class="btn btn-sm btn-outline-secondary me-2" id="resetBtn">Reset</button>
+                            <button class="btn btn-sm btn-outline-primary" id="sampleBtn">Show Sample Flow</button>
+                        </div>
+                        </div> <!-- This closes ussd-demo -->
+                        <div class="mobile-phone-bottom-bar">
+                            <span class="mobile-phone-home-button"></span>
+                        </div>
+                    </div> <!-- This closes mobile-phone-frame -->
+                </div>
+                
+                <div class="col-lg-4 col-md-12">
+                    <div class="ussd-instructions">
+                        <h4>How to Use This Demo</h4>
+                        <ol class="mt-3">
+                            <li>Click "SEND" to start with *123#</li>
+                            <li>Select options by entering the corresponding number</li>
+                            <li>Follow the menu prompts</li>
+                            <li>Click "Reset" to start over</li>
+                        </ol>
+                        
+                        <h5 class="mt-4">Real USSD Code</h5>
+                        <p>On your mobile phone, dial: <strong>*123#</strong></p>
+                        <p>Standard network rates apply</p>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Available Services</h5>
+                            <ul class="list-unstyled">
+                                <li>• Market Prices</li>
+                                <li>• Sell Your Produce</li>
+                                <li>• Apply for Loans</li>
+                                <li>• Get Insurance</li>
+                                <li>• Agent Locator</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Why Use Mlima Connect USSD?</h3>
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-3">
+                                    <h5>Simple</h5>
+                                    <p>No smartphone or internet needed. Works on any mobile phone.</p>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <h5>Fast</h5>
+                                    <p>Access information and services in seconds, even in areas with poor connectivity.</p>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <h5>Secure</h5>
+                                    <p>Your transactions are safe and secure, with no need to share sensitive information.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Mlima Connect</h5>
+                    <p>Empowering Ugandan farmers with access to markets, financial services, and agricultural support.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="survey.html">Farmer Survey</a></li>
+                        <li><a href="agent.html">Become an Agent</a></li>
+                        <li><a href="ussd.html">USSD Demo</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@mlimaconnect.ug</li>
+                        <li>Phone: +256 700 000000</li>
+                        <li>WhatsApp: +256 700 000001</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Mlima Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- USSD Simulation Script -->
+    <script src="/js/ussd.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,544 @@
+/* ===== COLOR VARIABLES ===== */
+:root {
+    /* Primary Colors */
+    --primary-green: #1a5d1a;    /* Main brand green */
+    --primary-green-light: #2e8b57;  /* Lighter green for hover states */
+    --primary-green-dark: #0f3d0f;   /* Darker green for text/headers */
+    
+    /* Accent Colors */
+    --accent-gold: #ffc107;      /* Gold for highlights and accents */
+    --accent-gold-light: #ffd54f;  /* Lighter gold for hover states */
+    --accent-red: #e53935;       /* Red for errors and important actions */
+    
+    /* Neutral Colors */
+    --white: #ffffff;
+    --light-gray: #f8f9fa;       /* Light gray for backgrounds */
+    --medium-gray: #e9ecef;      /* Medium gray for borders */
+    --dark-gray: #6c757d;        /* Dark gray for secondary text */
+    --dark-text: #2c3e50;        /* Dark blue-gray for primary text */
+    
+    /* Status Colors */
+    --success: #28a745;          /* Success green */
+    --info: #17a2b8;             /* Info blue */
+    --warning: #ffc107;          /* Warning yellow */
+    --danger: #dc3545;           /* Danger red */
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Border Radius */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-sm: 4px;
+
+    /* USSD Specific Variables */
+    --ussd-bg: #f0f0f0;
+    --ussd-text: #333;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-text);
+    background-color: var(--light-gray);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-green-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-green-light);
+    text-decoration: underline;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-green-light);
+    border-color: var(--primary-green-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline-primary {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+}
+
+.btn-accent {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--dark-text);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-gold-light);
+    border-color: var(--accent-gold-light);
+    color: var(--dark-text);
+}
+
+/* ===== FORMS ===== */
+.form-control, .form-select {
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--medium-gray);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.25rem rgba(26, 93, 26, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-green-dark);
+}
+
+/* Form validation */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+    border-color: var(--accent-red);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23e53935'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23e53935' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+    border-color: var(--success);
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* ===== CARDS ===== */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    background-color: var(--primary-green);
+    color: white;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+/* ===== ALERTS ===== */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.9);
+    color: white;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.9);
+    color: white;
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.9);
+    color: var(--dark-text);
+}
+
+.alert-info {
+    background-color: rgba(23, 162, 184, 0.9);
+    color: white;
+}
+
+/* ===== NAVIGATION ===== */
+.navbar {
+    background-color: var(--primary-green) !important;
+    box-shadow: var(--shadow);
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--border-radius);
+    margin: 0 0.2rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-gold) !important;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.bg-primary {
+    background-color: var(--primary-green) !important;
+}
+
+.text-primary {
+    color: var(--primary-green) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-gold) !important;
+    color: var(--dark-text) !important;
+}
+
+.text-accent {
+    color: var(--accent-gold) !important;
+}
+
+/* ===== LAYOUT ===== */
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-gold);
+    border-radius: 2px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .section {
+        padding: 2.5rem 0;
+    }
+    
+    .card, .contact-card, .agent-form {
+        padding: 1.5rem;
+    }
+}
+
+/* ===== Survey Page Specific Styles ===== */
+body.survey-page-body {
+    background-color: var(--light-gray, #f7fafc); /* Using theme variable */
+    padding-bottom: 2rem;
+}
+
+.survey-card {
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: var(--shadow-lg, 0 0 20px rgba(0,0,0,0.08)); /* Using theme variable */
+    border-radius: var(--border-radius-lg, 14px); /* Using theme variable */
+    overflow: hidden;
+    background-color: var(--white, #fff);
+}
+
+.survey-iframe {
+    width: 100%;
+    min-height: 1200px; /* Default height */
+    border: none;
+}
+
+.survey-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white, white);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-bottom: 0; /* Ensure no margin if iframe is directly below */
+}
+
+.survey-header h1 {
+    color: var(--white, white); /* Ensure h1 inside header is white */
+}
+
+.survey-header p a {
+    color: var(--accent-gold, #FFD700); /* Style link in header */
+    font-weight: bold;
+}
+
+.survey-header p a:hover {
+    color: var(--accent-gold-light, #FFD700);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for survey page */
+@media (max-width: 768px) {
+    .survey-iframe {
+        min-height: 1400px; /* Adjusted height for smaller screens */
+    }
+    .survey-header {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ===== Mobile Phone Frame Styles (for USSD Page) ===== */
+.mobile-phone-frame {
+    position: relative;
+    max-width: 380px; /* Typical phone width */
+    min-height: 700px; /* Typical phone height */
+    background-color: #2C3E50; /* Dark phone body color */
+    border-radius: 40px; /* Rounded corners for phone body */
+    padding: 20px 15px; /* Inner padding for screen area */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 0 8px #1A252F; /* Outer shadow and bezel effect */
+    margin: 2rem auto; /* Center the phone on the page */
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-phone-top-bar {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; /* Space between top bar and screen */
+    position: relative;
+}
+
+.mobile-phone-speaker {
+    display: block;
+    width: 60px;
+    height: 6px;
+    background-color: #1A252F; /* Darker slot for speaker */
+    border-radius: 3px;
+    margin: 0 auto; /* Center speaker */
+}
+
+.mobile-phone-camera {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #1A252F; /* Darker circle for camera */
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50px); /* Position next to speaker */
+    top: 50%;
+    margin-top: -5px;
+}
+
+/* Adjust existing ussd-demo to fit into the phone frame */
+.mobile-phone-frame .ussd-demo {
+    flex-grow: 1;
+    background-color: var(--ussd-bg, #f0f0f0); /* Screen background */
+    border-radius: 20px; /* Slightly rounded corners for the screen part */
+    padding: 15px;
+    margin-bottom: 0; /* Remove original margin */
+    box-shadow: none; /* Remove original shadow, frame has shadow */
+    border: none; /* Remove original border */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensure content stays within screen */
+}
+
+.mobile-phone-frame .ussd-screen {
+    border-radius: 10px; /* Match inner screen rounding */
+    min-height: 300px; /* Adjust height for phone context */
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.mobile-phone-frame .ussd-input input {
+    font-size: 0.9rem;
+}
+
+.mobile-phone-frame .ussd-input button {
+    font-size: 0.9rem;
+    padding: 0 15px;
+}
+
+.mobile-phone-frame .ussd-demo h3 {
+    font-size: 1.1rem; /* Slightly smaller title for phone screen */
+    color: var(--primary-green);
+}
+
+.mobile-phone-bottom-bar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Space between screen and bottom bar */
+}
+
+.mobile-phone-home-button {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid #1A252F; /* Darker circle for home button */
+    border-radius: 50%;
+}
+
+/* Ensure instructions column is visible and sensible next to phone */
+.ussd-container .row .col-lg-4 {
+    align-self: flex-start; /* Align instructions to the top */
+    margin-top: 2rem; /* Add some top margin to align better with phone */
+}
+
+
+/* ===== USSD Page Specific Styles ===== */
+.ussd-container {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+.ussd-demo {
+    background-color: var(--ussd-bg, #f0f0f0);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow, 0 4px 15px rgba(0,0,0,0.1));
+    border: 1px solid #ddd;
+}
+
+.ussd-screen {
+    background-color: var(--white, #fff);
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 400px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    overflow-y: auto;
+    border: 1px solid var(--medium-gray, #ccc);
+}
+
+.ussd-message {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.ussd-received {
+    background-color: #e3f2fd;
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+}
+
+.ussd-sent {
+    background-color: #e8f5e9;
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
+.ussd-menu {
+    background-color: var(--light-gray, #f5f5f5);
+    padding: 15px;
+    border-radius: var(--border-radius-lg, 10px);
+    margin: 15px 0;
+    border: 1px dashed var(--dark-gray, #999);
+}
+
+.ussd-menu-item {
+    margin: 8px 0;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm, 5px);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ussd-menu-item:hover {
+    background-color: var(--medium-gray, #e0e0e0);
+}
+
+.ussd-input {
+    display: flex;
+    margin-top: 15px;
+}
+
+.ussd-input input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--medium-gray, #ccc);
+    border-radius: var(--border-radius-sm, 5px) 0 0 var(--border-radius-sm, 5px);
+    font-family: 'Courier New', monospace;
+}
+
+.ussd-input button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 var(--border-radius-sm, 5px) var(--border-radius-sm, 5px) 0;
+    cursor: pointer;
+}
+
+.ussd-input button:hover {
+    background-color: var(--primary-green-light);
+}
+
+.ussd-instructions {
+    background-color: var(--accent-gold-light);
+    border-left: 4px solid var(--accent-gold);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 var(--border-radius, 8px) var(--border-radius, 8px) 0;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}

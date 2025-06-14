@@ -7,6 +7,7 @@ databases:
 services:
   - type: web
     name: mlima-connect-app
+    rootDir: .
     runtime: node
     plan: free # Use the free tier for development
     buildCommand: "npm install"

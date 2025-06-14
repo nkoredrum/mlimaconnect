@@ -9,123 +9,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-color: #2E8B57;
-            --accent-color: #FFD700;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .navbar {
-            background-color: var(--primary-color);
-        }
-        
-        .navbar-brand, .nav-link {
-            color: white !important;
-        }
-        
-        .page-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .contact-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 30px;
-            margin-bottom: 30px;
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: #267548;
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.25);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 30px;
-        }
-        
-        .btn-primary:hover {
-            background-color: #267548;
-            border-color: #267548;
-        }
-        
-        .map-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            border: 0;
-        }
-        
-        .partner-logo {
-            max-width: 150px;
-            max-height: 80px;
-            margin: 15px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-        
-        .partner-logo:hover {
-            opacity: 1;
-        }
-        
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 30px 0;
-            margin-top: 60px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -201,7 +85,7 @@
             <div class="col-lg-6 mb-4">
                 <div class="contact-card">
                     <h3 class="mb-4">Send Us a Message</h3>
-                    <form action="https://formspree.io/f/your-form-id-here" method="POST" id="contactForm">
+                    <form id="contactForm" novalidate>
                         <div class="mb-3">
                             <label for="name" class="form-label">Your Name *</label>
                             <input type="text" class="form-control" id="name" name="name" required>
@@ -226,6 +110,9 @@
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </div>
                     </form>
+
+<!-- Add this before the closing body tag -->
+<script src="/js/form-handler.js"></script>
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
@@ -301,11 +188,11 @@
                 <div class="col-md-3">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="survey.html" class="text-white">Farmer Survey</a></li>
-                        <li><a href="agent.html" class="text-white">Become an Agent</a></li>
-                        <li><a href="ussd.html" class="text-white">USSD Demo</a></li>
-                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="survey.html">Farmer Survey</a></li>
+                        <li><a href="agent.html">Become an Agent</a></li>
+                        <li><a href="ussd.html">USSD Demo</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Survey - Mlima Connect</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Corrected path -->
+</head>
+<body class="survey-page-body"> <!-- Added class for specific body styling -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Mlima Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="survey.html">Farmer Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="agent.html">Become an Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ussd.html">USSD Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+<main>
+    <div class="survey-card">
+        <div class="survey-header">
+            <h1 class="display-5 fw-bold mb-3">Farmer Survey</h1>
+            <p class="lead">Help us serve you better by sharing your farming experience</p>
+            
+            <div class="text-center mt-4">
+                <p>Having trouble with the form? <a href="https://forms.gle/HmC4JQ18ACJMRbrS7" target="_blank">Open it in a new tab</a>.</p>
+            </div>
+        </div>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSerGcOZtZTNlUXp8hNxXsCeOZIyvkkhBm8FuteVU2QEdJCIIQ/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0" class="survey-iframe">Loading…</iframe>
+    </div> <!-- This closes .survey-card -->
+</main> <!-- Moved main to wrap .survey-card -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Mlima Connect</h5>
+                    <p>Empowering Ugandan farmers with access to markets, financial services, and agricultural support.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="survey.html">Farmer Survey</a></li>
+                        <li><a href="agent.html">Become an Agent</a></li>
+                        <li><a href="ussd.html">USSD Demo</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@mlimaconnect.ug</li>
+                        <li>Phone: +256 700 000000</li>
+                        <li>WhatsApp: +256 700 000001</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Mlima Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
