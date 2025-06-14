@@ -7,7 +7,6 @@ const router = express.Router();
 // GET /api/db-check
 router.get('/db-check', async (req, res) => {
     console.log('Request received for /api/db-check');
-    const client = await pool.connect();
     try {
         const query = `
             SELECT tablename 
@@ -15,7 +14,7 @@ router.get('/db-check', async (req, res) => {
             WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';
         `;
         
-        const result = await client.query(query);
+        const result = await pool.query(query);
         const tables = result.rows.map(row => row.tablename);
 
         console.log('Tables found:', tables);
@@ -33,8 +32,6 @@ router.get('/db-check', async (req, res) => {
             message: 'Failed to check database tables.',
             error: error.message
         });
-    } finally {
-        client.release();
     }
 });
 
