@@ -9,6 +9,7 @@ services:
     name: mlima-connect-app
     rootDir: .
     runtime: node
+    # Specify the Node.js version to ensure compatibility
     node:
       version: "20"
     plan: free # Use the free tier for development
