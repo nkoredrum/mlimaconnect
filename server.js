@@ -15,6 +15,7 @@ const { StatusCodes } = require('http-status-codes');
 // Import routes
 const apiRoutes = require('./src/routes/api');
 const testDbRoutes = require('./src/routes/testDb');
+const agentRoutes = require('./src/routes/agentRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -84,6 +85,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // API Routes
 app.use('/api', apiRoutes);
 app.use('/api', testDbRoutes);
+app.use('/api', agentRoutes);
 
 // Handle client-side routing, return all requests to the app
 app.get('*', (req, res) => {
