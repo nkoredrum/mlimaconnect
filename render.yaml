@@ -1,11 +1,20 @@
-# Mlima Connect Static Site Configuration
+databases:
+  - name: mlima-connect-db
+    databaseName: mlima_connect_db # You can name your DB this
+    user: mlima_user
+    plan: free # Use the free tier for development
+
 services:
   - type: web
-    name: mlima-connect
-    env: static
-    buildCommand: ""
-    staticPublishPath: "."
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: "/index.html"
+    name: mlima-connect-app
+    runtime: node
+    plan: free # Use the free tier for development
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mlima-connect-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
