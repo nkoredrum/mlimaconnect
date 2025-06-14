@@ -9,6 +9,8 @@ services:
     name: mlima-connect-app
     rootDir: .
     runtime: node
+    node:
+      version: "20"
     plan: free # Use the free tier for development
     buildCommand: "npm install"
     startCommand: "npm start"
