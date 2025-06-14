@@ -17,6 +17,7 @@ const apiRoutes = require('./src/routes/api');
 const testDbRoutes = require('./src/routes/testDb');
 const agentRoutes = require('./src/routes/agentRoutes');
 const contactRoutes = require('./src/routes/contactRoutes');
+const dbCheckRoutes = require('./src/routes/dbCheckRoutes'); // Temporary diagnostic route
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -88,6 +89,7 @@ app.use('/api', apiRoutes);
 app.use('/api', testDbRoutes);
 app.use('/api', agentRoutes);
 app.use('/api', contactRoutes);
+app.use('/api', dbCheckRoutes); // Temporary diagnostic route
 
 // Handle client-side routing, return all requests to the app
 app.get('*', (req, res) => {
