@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md,html,css}\"",
     "lint": "eslint . --ext .js --fix",
     "lint:fix": "eslint . --ext .js --fix",
-    "prepare": "husky install"
+
 
   },
   "dependencies": {
